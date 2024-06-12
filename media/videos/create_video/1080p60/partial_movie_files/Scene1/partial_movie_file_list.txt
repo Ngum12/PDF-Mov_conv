@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/clear/PDF-Mov_conv/media/videos/create_video/1080p60/partial_movie_files/Scene1/3977891868_4119515170_223132457.mp4'
+file 'file:/home/clear/PDF-Mov_conv/media/videos/create_video/1080p60/partial_movie_files/Scene1/2852726489_784179552_1022755610.mp4'
+file 'file:/home/clear/PDF-Mov_conv/media/videos/create_video/1080p60/partial_movie_files/Scene1/2852726489_855790286_2698426528.mp4'

@@ -8,7 +8,10 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 if __name__ == "__main__":
-    pdf_path = "book.pdf"
+    pdf_path = "One story.pdf"  # Replace this with the name of your uploaded PDF file
     text = extract_text_from_pdf(pdf_path)
-    with open("book_text.txt", "w") as f:
-        f.write(text)
+    
+    # Save extracted text to a file
+    with open("extracted_text.txt", "w") as file:
+        file.write(text)
+
