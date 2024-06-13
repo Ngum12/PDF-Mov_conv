@@ -1,24 +1,27 @@
+# create_video.py
+
 from manim import *
 
-class Scene1(Scene):
+class BookAnimation(Scene):
     def construct(self):
-        # Read processed text from file
-        with open("processed_text.txt", "r") as file:
-            text = file.read()
+        with open("processed_content.txt", "r") as file:
+            processed_content = file.readlines()
 
-        # Create a Text object from the extracted text
-        text_object = Text(text[:200])  # Display the first 200 characters for brevity
-        
-        # Display the text
-        self.play(Write(text_object))
-        self.wait(2)
-        
-        # Fade out the text
-        self.play(FadeOut(text_object))
+        for page_content in processed_content:
+            text = page_content.split("Text: ")[1].split("Images: ")[0].strip()
+            images = page_content.split("Images: ")[1].strip().split(", ")
 
-# Run the scene
+            # Display text
+            self.play(Write(Text(text)))
+
+            # Display images/animations
+            for img_path in images:
+                img = ImageMobject(img_path)
+                self.play(FadeIn(img))
+
+            self.wait(1)  # Adjust as needed for timing between pages
+
 if __name__ == "__main__":
-    from manim import *
-    config.media_width = "100%"
-    Scene1().render()
+    scene = BookAnimation()
+    scene.render()
 
